@@ -24,7 +24,7 @@
 }
 
 .main-block-width {
-  max-width: var(--main-block-width);
+  max-inline-size: var(--main-block-width);
 }
 
 .header {
@@ -33,10 +33,10 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  width: 100%;
-  margin: 100px 0;
+  inline-size: 100%;
+  margin-block: 100px;
   border: solid 2px var(--accent-color);
-  padding: clamp(7.5rem, 0.939vw + 7.28rem, 8.125rem) 0;
+  padding-block: clamp(7.5rem, 0.939vw + 7.28rem, 8.125rem);
   background-color: rgb(255, 255, 255);
 }
 
@@ -96,7 +96,8 @@
 
 .card__title {
   border: solid 2px var(--accent-color);
-  padding: 4px 10px;
+  padding-block: 4px;
+  padding-inline: 10px;
   font-family: var(--main-font);
   font-size: 18px;
   line-height: 100%;
@@ -124,7 +125,8 @@
   flex-direction: column;
   gap: 25px;
   border: solid 2px var(--accent-color);
-  padding: 25px;
+  padding-inline: 25px;
+  padding-block: 25px;
   background-color: rgb(255, 255, 255);
 }
 
@@ -191,7 +193,7 @@
   align-self: center;
   margin-block-end: 100px;
   border: solid 2px var(--accent-color);
-  padding: 0 20px;
+  padding-inline: 20px; 
   background-color: rgb(255, 255, 255);
   block-size: 55px;
 }
@@ -219,8 +221,8 @@
 }
 
 .floppy-icon {
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 dialog {
@@ -250,7 +252,7 @@ dialog::backdrop {
 }
 
 .dialog__content-text {
-  width: 100%;
+  inline-size: 100%;
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: 150%;
@@ -266,8 +268,8 @@ dialog::backdrop {
 
 @media (width <= 375px) {
   .floppy-icon {
-    width: 28px;
-    height: 28px;
+    inline-size: 28px;
+    block-size: 28px;
   }
 
   .save-button {
@@ -276,7 +278,8 @@ dialog::backdrop {
     align-items: center;
     align-self: center;
     margin-block-end: 100px;
-    padding: 17px 20px;
+    padding-block: 17px;
+    padding-inline: 20px;
     block-size: 84px;
   }
 
@@ -313,8 +316,8 @@ dialog::backdrop {
   position: absolute;
   inset: 0;
   z-index: 1;
-  width: 101%;
-  height: 101%;
+  inline-size: 101%;
+  block-size: 101%;
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
@@ -392,8 +395,8 @@ dialog::backdrop {
 .save-floppy-icon {
   position: relative;
   z-index: 2;
-  width: 21px;
-  height: 21px;
+  inline-size: 21px;
+  block-size: 21px;
   color: #fff;
   mix-blend-mode: difference;
 }

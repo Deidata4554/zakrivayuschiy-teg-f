@@ -36,12 +36,7 @@
   width: 100%;
   margin: 100px 0;
   border: solid 2px var(--accent-color);
-  padding: clamp(
-      122px,
-      122px + (130 - 122) * ((100vw - 375px) / (1440 - 375)),
-      130px
-    )
-    0;
+  padding: clamp(7.5rem, 0.939vw + 7.28rem, 8.125rem) 0;
   background-color: rgb(255, 255, 255);
 }
 
@@ -52,22 +47,14 @@
 }
 
 .header__logo {
-  font-size: clamp(
-    49px,
-    49px + (65 - 49) * ((100vw - 375px) / (1440 - 375)),
-    65px
-  );
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   line-height: 100%;
   letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .header__title {
-  font-size: clamp(
-    14px,
-    14px + (23 - 14) * ((100vw - 375px) / (1440 - 375)),
-    23px
-  );
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
 }
 

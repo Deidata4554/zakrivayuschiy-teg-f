@@ -223,7 +223,6 @@ dialog {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   gap: 30px;
   border: solid 2px var(--accent-color);
   block-size: 191px;

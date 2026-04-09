@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: var(--main-font);
+  font-family: var(--main-font, "Inter", sans-serif);
   background-image: var(--background-gradient);
   background-size: cover;
   background-attachment: fixed;
@@ -98,7 +98,7 @@
   border: solid 2px var(--accent-color);
   padding-inline: 10px;
   padding-block: 4px;
-  font-family: var(--main-font);
+  font-family: var(--main-font, "Inter", sans-serif);
   font-size: 18px;
   line-height: 100%;
   background-color: rgb(255, 255, 255);
@@ -118,6 +118,7 @@
   max-width: 100%;
   object-fit: cover;
   aspect-ratio: 1 / 1;
+  border: 2px 0 2px 0 solif rgb(0 0 0);
 }
 
 .card__content {
@@ -131,7 +132,7 @@
 }
 
 .card__content-text {
-  font-family: var(--main-font);
+  font-family: var(--main-font, "Inter", sans-serif);
   font-size: 18px;
   line-height: 21px;
   font-variation-settings: "wght" var(--main-text-weight);
@@ -177,24 +178,6 @@
   mix-blend-mode: difference;
 }
 
-.card__like-button {
-  border: solid 2px var(--accent-color);
-  inline-size: 130px;
-  block-size: 38px;
-}
-
-.save-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  align-self: center;
-  margin-block-end: 100px;
-  border: solid 2px var(--accent-color);
-  padding-inline: 20px;
-  background-color: rgb(255, 255, 255);
-  block-size: 55px;
-}
-
 .filter-old-photo {
   filter: sepia(0.6) brightness(0.9) contrast(1.1);
 }
@@ -228,15 +211,23 @@
   block-size: 21px;
 }
 
+.dialog__content .floppy-icon {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
 dialog {
   position: fixed;
   inset: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 30px;
   border: solid 2px var(--accent-color);
-  padding-inline: 40px;
-  padding-block: 30px;
+  align-items: center;
+  block-size: 191px;
+  inline-size: 353px;
 }
 
 dialog:not([open]) {
@@ -264,40 +255,16 @@ dialog::backdrop {
   max-inline-size: 234px;
 }
 
-.ok-button {
+/* конпки */
+
+.button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding-inline: 0;
+   padding-block: 0;
   border: solid 2px var(--accent-color);
-  padding-block: 12.5px;
-}
-
-@media (width <= 375px) {
-  .floppy-icon {
-    inline-size: 28px;
-    block-size: 28px;
-  }
-
-  .save-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-    margin-block-end: 100px;
-    padding-inline: 20px;
-    padding-block: 17px;
-    block-size: 84px;
-  }
-
-  dialog {
-    padding-inline: 30px;
-  }
-}
-
-.card__like-button:hover .like-icon {
-  fill: var(--accent-color);
-}
-
-.card__like-button,
-.ok-button,
-.save-button {
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -305,16 +272,33 @@ dialog::backdrop {
   transition: box-shadow 0.3s linear;
 }
 
-.card__like-button:focus,
-.ok-button:focus,
-.save-button:focus {
+.save-button {
+  align-self: center;
+  margin-block-end: 100px;
+  padding-inline: 20px;
+  block-size: 55px;
+}
+
+.ok-button {
+  inline-size: 293px;
+  block-size: 38px;
+}
+
+.card__like-button {
+  inline-size: 130px;
+  block-size: 38px;
+}
+
+.card__like-button:hover .like-icon {
+  fill: var(--accent-color);
+}
+
+.button:focus {
   box-shadow: 2px 2px var(--accent-color);
   outline: none;
 }
 
-.card__like-button::before,
-.ok-button::before,
-.save-button::before {
+.button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -327,10 +311,32 @@ dialog::backdrop {
   block-size: 101%;
 }
 
-.card__like-button:hover::before,
-.ok-button:hover::before,
-.save-button:hover::before {
+.button:hover::before {
   transform: scaleX(1);
+}
+
+/*  кнопки  */
+
+@media (width <= 375px) {
+  .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .save-button .floppy-icon {
+    align-self: center;
+  }
+
+  .save-button {
+    flex-direction: column;
+    padding-block: 17px;
+    block-size: 84px;
+    gap: 20px
+  }
+
+  dialog {
+    padding-inline: 30px;
+  }
 }
 
 .contour {

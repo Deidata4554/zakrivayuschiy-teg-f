@@ -225,8 +225,10 @@ dialog {
   align-items: center;
   gap: 30px;
   border: solid 2px var(--accent-color);
-  block-size: 191px;
-  inline-size: 353px;
+  padding-inline: 28px;
+  padding-block: 28px;
+  /* block-size: 191px;
+  inline-size: 353px; */
 }
 
 dialog:not([open]) {
@@ -334,7 +336,8 @@ dialog::backdrop {
   }
 
   dialog {
-    padding-inline: 30px;
+    padding-inline: 22px;
+    min-inline-size: 341px;
   }
 }
 

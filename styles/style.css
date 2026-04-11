@@ -219,16 +219,16 @@
 dialog {
   position: fixed;
   inset: 0;
+  padding: 0;
+  border: solid 2px var(--accent-color);
+}
+
+.dialog {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 30px;
-  border: solid 2px var(--accent-color);
   padding-inline: 28px;
   padding-block: 28px;
-  /* block-size: 191px;
-  inline-size: 353px; */
 }
 
 dialog:not([open]) {
@@ -251,7 +251,6 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  inline-size: 100%;
   font-variation-settings: "wght" var(--header-weight);
   max-inline-size: 234px;
 }
@@ -281,7 +280,7 @@ dialog::backdrop {
 }
 
 .ok-button {
-  inline-size: 293px;
+  max-inline-size: 293px;
   block-size: 38px;
 }
 
@@ -318,28 +317,7 @@ dialog::backdrop {
 
 /*  кнопки  */
 
-@media (width <= 375px) {
-  .floppy-icon {
-    inline-size: 28px;
-    block-size: 28px;
-  }
 
-  .save-button .floppy-icon {
-    align-self: center;
-  }
-
-  .save-button {
-    flex-direction: column;
-    gap: 20px;
-    padding-block: 17px;
-    block-size: 84px;
-  }
-
-  dialog {
-    padding-inline: 22px;
-    min-inline-size: 341px;
-  }
-}
 
 .contour {
   transition: fill 0.1s linear;
@@ -410,4 +388,43 @@ dialog::backdrop {
   inline-size: 21px;
   block-size: 21px;
   mix-blend-mode: difference;
+}
+
+@media (width <= 375px) {
+  .save-floppy-icon .floppy-icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+
+  .save-button .floppy-icon {
+    align-self: center;
+  }
+
+  .save-button {
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 17px;
+    block-size: 84px;
+  }
+
+  .dialog {
+    padding: 0;
+    padding-block: 28px;
+    padding-inline: 38px;
+    justify-content: center;
+  }
+
+  .dialog__content {
+  inline-size: 261px;
+}
+
+.ok-button {
+  inline-size: 261px;
+}
+
+.dialog-floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
 }
